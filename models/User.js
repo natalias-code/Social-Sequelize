@@ -1,5 +1,15 @@
+const { DataTypes } = require('sequelize');
+const sequelize = require('../db/connection');
 
-let User;
+const User = sequelize.define('User', {
+  username: {
+    type: DataTypes.STRING,
+  },
+  email: {
+    type: DataTypes.STRING,
+  },
+});
 
-
-module.exports = User;
+module.exports = {
+    User,
+}
